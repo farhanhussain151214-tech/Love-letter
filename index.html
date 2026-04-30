@@ -132,21 +132,23 @@ F~
  <script>
   function createHeart() {
     const heart = document.createElement('div');
-    heart.classList.add('heart');
-    heart.innerHTML = '❤';
+    heart.className = 'heart';
+
+    const hearts = ['❤', '💖', '💕', '💗', '💘'];
+    heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
 
     heart.style.left = Math.random() * window.innerWidth + 'px';
-    heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
-    heart.style.animationDuration = (Math.random() * 5 + 5) + 's';
+    heart.style.fontSize = (Math.random() * 25 + 15) + 'px';
+    heart.style.animationDuration = (Math.random() * 6 + 6) + 's';
 
     document.body.appendChild(heart);
 
     setTimeout(() => {
       heart.remove();
-    }, 10000);
+    }, 12000);
   }
 
-  setInterval(createHeart, 300);
+  setInterval(createHeart, 250);
 </script>
 </body>
 </html>
