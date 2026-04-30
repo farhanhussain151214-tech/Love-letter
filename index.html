@@ -150,12 +150,113 @@ F~
 
   setInterval(createHeart, 250);
 </script>
-<script>
-  const correctPassword = "lallusur143";
-  const enteredPassword = prompt("Enter the password to view this special message:");
+<div id="passwordOverlay">
+  <div class="password-box">
+    <div class="hearts">💖 ✨ 💌 ✨ 💖</div>
+    <h1>Our Secret Love Letter</h1>
+    <p>Enter the secret password to unlock something written straight from the heart.</p>
+    <input type="password" id="passwordInput" placeholder="Enter our secret password" />
+    <button onclick="checkPassword()">Unlock My Heart 💘</button>
+    <p id="errorMessage"></p>
+  </div>
+</div><style>
+  #passwordOverlay {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(135deg, #ffdde1, #ee9ca7, #fad0c4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    overflow: hidden;
+  }
 
-  if (enteredPassword !== correctPassword) {
-    document.body.innerHTML = "<h1 style='text-align:center; margin-top:20%; font-family:Arial;'>Access Denied 💔</h1>";
+  .password-box {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    padding: 40px;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(255, 105, 180, 0.35);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    max-width: 420px;
+    width: 90%;
+    animation: fadeIn 1s ease;
+  }
+
+  .hearts {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    animation: float 2s ease-in-out infinite;
+  }
+
+  .password-box h1 {
+    color: #d63384;
+    margin-bottom: 15px;
+    font-family: 'Georgia', serif;
+  }
+
+  .password-box p {
+    color: #6d214f;
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+  }
+
+  #passwordInput {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 25px;
+    outline: none;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  button {
+    background: linear-gradient(45deg, #ff4d6d, #ff758f);
+    color: white;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(255, 77, 109, 0.35);
+  }
+
+  button:hover {
+    transform: scale(1.05);
+  }
+
+  #errorMessage {
+    color: #c9184a;
+    margin-top: 15px;
+    font-weight: bold;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+</style><script>
+  const correctPassword = "lallusur143";
+
+  function checkPassword() {
+    const enteredPassword = document.getElementById('passwordInput').value;
+    const errorMessage = document.getElementById('errorMessage');
+
+    if (enteredPassword === correctPassword) {
+      document.getElementById('passwordOverlay').style.display = 'none';
+    } else {
+      errorMessage.textContent = 'Wrong password. Try again, my love 💕';
+    }
   }
 </script>
 </body>
