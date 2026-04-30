@@ -150,5 +150,13 @@ F~
 
   setInterval(createHeart, 250);
 </script>
+<script>
+  const correctPassword = "lallusur143";
+  const enteredPassword = prompt("Enter the password to view this special message:");
+
+  if (enteredPassword !== correctPassword) {
+    document.body.innerHTML = "<h1 style='text-align:center; margin-top:20%; font-family:Arial;'>Access Denied 💔</h1>";
+  }
+</script>
 </body>
 </html>
