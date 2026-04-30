@@ -119,23 +119,24 @@
     </div>
   </div>
 
-  <script>
-    function createHeart(300) {
-      const heart = 300 document.createElement('div');
-      heart.classList.add('heart');
-      heart.innerHTML = '❤';
-      heart.style.left = Math.random() * window.innerWidth + 'px';
-      heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
-      heart.style.animationDuration = (Math.random() * 5 + 5) + 's';
+ <script>
+  function createHeart() {
+    const heart = document.createElement('div');
+    heart.classList.add('heart');
+    heart.innerHTML = '❤';
 
-      document.body.appendChild(heart);
+    heart.style.left = Math.random() * window.innerWidth + 'px';
+    heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
+    heart.style.animationDuration = (Math.random() * 5 + 5) + 's';
 
-      setTimeout(() => {
-        heart.remove();
-      }, 10000);
-    }
+    document.body.appendChild(heart);
 
-    setInterval(createHeart, 300);
-  </script>
+    setTimeout(() => {
+      heart.remove();
+    }, 10000);
+  }
+
+  setInterval(createHeart, 300);
+</script>
 </body>
 </html>
