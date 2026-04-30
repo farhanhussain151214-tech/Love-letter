@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For My Love</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Georgia', serif;
+      background: linear-gradient(135deg, #f8a5c2, #fbc2d4);
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 50px auto;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 50px;
+      border-radius: 20px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+      position: relative;
+      z-index: 10;
+    }
+
+    h1 {
+      text-align: center;
+      color: #ff4d88;
+      font-size: 3rem;
+      margin-bottom: 30px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 2;
+      color: #444;
+      text-align: justify;
+      margin-bottom: 20px;
+    }
+
+    .signature {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 1.5rem;
+      color: #ff4d88;
+      font-weight: bold;
+    }
+
+    .heart {
+      position: fixed;
+      top: -20px;
+      color: rgba(255, 105, 180, 0.6);
+      animation: fall linear forwards;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-10vh) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 30px 20px;
+      }
+
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>For My Love ❤️</h1>
+
+    <p>
+      I want you to know that my love for you is deeper than words can ever truly express.
+      Every moment with you feels special, and every memory we create together becomes a treasure I hold close to my heart.
+      You have brought so much happiness, warmth, and meaning into my life.
+    </p>
+
+    <p>
+      Your kindness, your smile, and the way you care make even ordinary days feel extraordinary.
+      Thank you for being by my side, for understanding me, and for always making me feel valued and loved.
+      I am endlessly grateful for you.
+    </p>
+
+    <p>
+      No matter what challenges life brings, I will always cherish our bond.
+      I admire the person you are, and I promise to always support, appreciate, and care for you.
+      You mean more to me than I could ever fully explain.
+    </p>
+
+    <div class="signature">
+      You are loved more than words can say 💖
+    </div>
+  </div>
+
+  <script>
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.innerHTML = '❤';
+      heart.style.left = Math.random() * window.innerWidth + 'px';
+      heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
+      heart.style.animationDuration = (Math.random() * 5 + 5) + 's';
+
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 10000);
+    }
+
+    setInterval(createHeart, 300);
+  </script>
+</body>
+</html>
