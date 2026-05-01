@@ -369,5 +369,21 @@ And always remember that you're special and you're so much important to someone 
     }
   }
 </script>
+<script>
+  const music = document.getElementById('bgMusic');
+  const button = document.getElementById('musicButton');
+
+  function toggleMusic() {
+    if (music.paused) {
+      music.play();
+      button.innerHTML =
+        '<span class="music-icon">💖</span><span class="music-text">Pause Our Song</span>';
+    } else {
+      music.pause();
+      button.innerHTML =
+        '<span class="music-icon">🎵</span><span class="music-text">Play Our Song</span>';
+    }
+  }
+</script>
 </body>
 </html>
