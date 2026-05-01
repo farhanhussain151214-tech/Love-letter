@@ -133,6 +133,49 @@
         font-size: 1rem;
       }
     }
+.music-player {
+  text-align: center;
+  margin: 35px 0;
+}
+
+#musicButton {
+  background: linear-gradient(135deg, #ff4d88, #ff85a2);
+  color: white;
+  border: none;
+  padding: 16px 38px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-family: 'Georgia', serif;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 8px 25px rgba(255, 77, 136, 0.4);
+  transition: all 0.3s ease;
+}
+
+#musicButton:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 12px 30px rgba(255, 77, 136, 0.6);
+}
+
+#musicButton:active {
+  transform: scale(0.96);
+}
+
+.music-icon {
+  font-size: 1.4rem;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.25);
+  }
+}
   </style>
 </head>
 <body>
