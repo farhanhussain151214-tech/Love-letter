@@ -432,5 +432,19 @@ And always remember that you're special and you're so much important to someone 
     }
   }
 </script>
+<script>
+  function showSurprise() {
+    const message = document.getElementById('surpriseMessage');
+    const button = document.getElementById('surpriseBtn');
+
+    if (message.style.display === 'none' || message.style.display === '') {
+      message.style.display = 'block';
+      button.innerHTML = '💖 A Special Message Just for You';
+    } else {
+      message.style.display = 'none';
+      button.innerHTML = '💌 Click for a Surprise';
+    }
+  }
+</script>
 </body>
 </html>
