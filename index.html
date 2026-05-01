@@ -458,5 +458,14 @@ And always remember that you're special and you're so much important to someone 
     }
   }
 </script>
+document.getElementById("surpriseBtn").addEventListener("click", function() {
+    const message = document.getElementById("surpriseMessage");
+
+    if (message.style.display === "block") {
+        message.style.display = "none";
+    } else {
+        message.style.display = "block";
+    }
+});
 </body>
 </html>
