@@ -176,6 +176,50 @@
     transform: scale(1.25);
   }
 }
+#surpriseBtn {
+  display: block;
+  margin: 30px auto;
+  background: linear-gradient(135deg, #ff4d88, #ff85a2);
+  color: white;
+  border: none;
+  padding: 15px 35px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-family: 'Georgia', serif;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(255, 77, 136, 0.4);
+  transition: all 0.3s ease;
+}
+
+#surpriseBtn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 25px rgba(255, 77, 136, 0.6);
+}
+
+#surpriseMessage {
+  display: none;
+  text-align: center;
+  margin-top: 25px;
+  padding: 20px;
+  font-size: 1.4rem;
+  color: #ff4d88;
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(255, 77, 136, 0.25);
+  animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
   </style>
 </head>
 <body>
